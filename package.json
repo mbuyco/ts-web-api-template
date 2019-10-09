@@ -1,0 +1,36 @@
+{
+  "name": "ts-web-api-template",
+  "version": "0.1.0",
+  "description": "Typescript Web API Template",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist/",
+    "prebuild": "npm run clean && tslint -c tslint.json -p tsconfig.json --fix",
+    "prestart": "npm run build",
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Buycs",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/body-parser": "^1.17.1",
+    "@types/compression": "^1.0.1",
+    "@types/errorhandler": "0.0.32",
+    "@types/express": "^4.17.1",
+    "@types/lusca": "^1.6.1",
+    "@types/mongoose": "^5.5.19",
+    "@types/node": "^12.7.12",
+    "rimraf": "^3.0.0",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "errorhandler": "^1.5.1",
+    "express": "^4.17.1",
+    "lusca": "^1.6.1",
+    "mongoose": "^5.7.3"
+  }
+}
