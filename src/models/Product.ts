@@ -1,17 +1,21 @@
 import mongoose from "mongoose";
 
-export type ProductDocument = mongoose.Document & {
-  name: string,
-  price: number,
-  inStock: boolean,
-  photoUrl: string
-};
+export interface IProductData {
+  name: string;
+  price: number;
+  inStock: boolean;
+  photoUrl?: string;
+  weight?: number;
+}
+
+export type ProductDocument = mongoose.Document & IProductData;
 
 const productSchema = new mongoose.Schema({
   inStock: Boolean,
   name: String,
   photoUrl: String,
-  price: Number
+  price: Number,
+  weight: Number
 });
 
 export const Product = mongoose.model<ProductDocument>("Product", productSchema);
