@@ -13,4 +13,20 @@ export default class ProductService {
   public async findAll(): Promise<IProduct[]> {
     return this.productRepository.findAll();
   }
+
+  public async findById(id: string) {
+    return this.productRepository.findById(id);
+  }
+
+  public async create(data: IProduct): Promise<IProduct | null> {
+    return this.productRepository.create(data);
+  }
+
+  public async update(id: string, data: IProduct): Promise<IProduct> {
+    return this.productRepository.update(id, data);
+  }
+
+  public async delete(id: string): Promise<any> {
+    return this.productRepository.delete(id);
+  }
 }
