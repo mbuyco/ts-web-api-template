@@ -11,6 +11,7 @@ export default class ProductService {
   }
 
   public async findAll(): Promise<IProduct[]> {
+    console.log(this.productRepository);
     return this.productRepository.findAll();
   }
 
