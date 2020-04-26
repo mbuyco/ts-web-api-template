@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 export interface IProductData {
   name: string;
@@ -15,7 +15,7 @@ const productSchema = new mongoose.Schema({
   name: String,
   photoUrl: String,
   price: Number,
-  weight: Number
+  weight: Number,
 });
 
-export const Product = mongoose.model<ProductDocument>("Product", productSchema);
+export const Product = mongoose.model<ProductDocument>('Product', productSchema);

@@ -1,5 +1,5 @@
-import { Request, Response } from "express";
-import { IProductData, Product, ProductDocument } from "../models/Product";
+import { Request, Response } from 'express';
+import { IProductData, Product, ProductDocument } from '../models/Product';
 
 // Controller for handling Products API
 class Products {
@@ -22,13 +22,14 @@ class Products {
   public static async update(req: Request, res: Response): Promise<void> {
     const productData: IProductData = req.body;
     const product: ProductDocument | null = await Product.findOneAndUpdate(
-    {
-      _id: req.params.id
-    },
-    productData,
-    {
-      new: true
-    });
+      {
+        _id: req.params.id,
+      },
+      productData,
+      {
+        new: true,
+      },
+    );
 
     res.json({ product });
   }
